@@ -36,4 +36,19 @@ public class Calculator
 		}
 		return result;
 	}
+
+	public double Multiply(double a, double b)
+	{
+		return a * b;
+	}
+
+	public double Multiply(List<double> numbers)
+	{
+		double product = 1;
+		foreach (double num in numbers)
+		{
+			product *= num;
+		}
+		return product;
+	}
 }
