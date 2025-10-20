@@ -19,4 +19,21 @@ public class Calculator
 		}
 		return sum;
 	}
+
+	public double Subtract(double a, double b)
+	{
+		return a - b;
+	}
+
+	public double Subtract(List<double> numbers)
+	{
+		if (numbers.Count == 0) return 0;
+
+		double result = numbers[0];
+		for (int i = 1; i < numbers.Count; i++)
+		{
+			result -= numbers[i];
+		}
+		return result;
+	}
 }
