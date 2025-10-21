@@ -1,0 +1,11 @@
+{
+	"welcome": "Welcome to the Overloaded Calculator!",
+	"prompt": "What operation would you like to perform? (Type 'help' for options.)",
+	"help": {
+		"header": "=== HELP MENU ===",
+		"operations": "Available operations: add, subtract, multiply, divide",
+		"commands": "Special commands:\n history - View previous results\n clear - Delete history\n exit - Quit the program",
+		"footer": "================="
+	},
+	"exitMessage": "Goodbye! Thanks for calculating responsibly."
+}
