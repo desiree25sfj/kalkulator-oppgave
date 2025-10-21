@@ -3,13 +3,32 @@
 Calculator calc = new Calculator();
 var operations = OperationDictionary.GetOperations(calc);
 
+List<CalculationHistory> history = HistoryManager.LoadHistory();
+
 while (true)
 {
-	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide or type 'exit' to quit)");
+	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide) \nOr type 'history' to view history/'exit' to quit");
 	string? operation = Console.ReadLine()?.ToLower();
 	if (string.IsNullOrWhiteSpace(operation))
 	{
 		Console.WriteLine("Invalid input. Please try again.");
+		continue;
+	}
+
+	if (operation == "history")
+	{
+		if (history.Count == 0)
+		{
+			Console.WriteLine("No previous calculations found.");
+		}
+		else
+		{
+			foreach (var record in history)
+			{
+				string nums = string.Join(", ", record.Numbers);
+				Console.WriteLine($"{record.Timestamp:g} | {record.Operation}({nums}) = {record.Result}");
+			}
+		}
 		continue;
 	}
 
@@ -45,6 +64,15 @@ while (true)
 	{
 		result = operations[operation](numbers);
 		Console.WriteLine($"Result: {result}");
+		history.Add(new CalculationHistory
+		{
+			Operation = operation,
+			Numbers = numbers,
+			Result = result,
+			Timestamp = DateTime.Now
+		});
+
+		HistoryManager.SaveHistory(history);
 	}
 	catch (DivideByZeroException ex)
 	{

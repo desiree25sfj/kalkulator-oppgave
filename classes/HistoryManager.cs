@@ -3,10 +3,13 @@ using System.Text.Json;
 
 public static class HistoryManager
 {
-	private static string filePath = "history.json";
+	private static string folderPath = "data";
+	private static string filePath = Path.Combine(folderPath, "history.json");
 
-	public static List<CalculationHistory> LoadRecords()
+	public static List<CalculationHistory> LoadHistory()
 	{
+		Directory.CreateDirectory(folderPath);
+
 		if (!File.Exists(filePath))
 			return new List<CalculationHistory>();
 
@@ -16,6 +19,8 @@ public static class HistoryManager
 
 	public static void SaveHistory(List<CalculationHistory> history)
 	{
+		Directory.CreateDirectory(folderPath);
+
 		string json = JsonSerializer.Serialize(history, new JsonSerializerOptions { WriteIndented = true });
 		File.WriteAllText(filePath, json);
 	}
