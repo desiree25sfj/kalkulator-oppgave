@@ -7,5 +7,18 @@
 		"commands": "Special commands:\n history - View previous results\n clear - Delete history\n exit - Quit the program",
 		"footer": "================="
 	},
-	"exitMessage": "Goodbye! Thanks for calculating responsibly."
+	"exitMessage": "Goodbye! Thanks for calculating responsibly.",
+	"errors": {
+		"invalidInput": "Invalid input. Please try again.",
+		"noNumbers": "You didn't enter any numbers!",
+		"invalidOperation": "Invalid operation. Please try again.",
+		"divideByZero": "Cannot divide by zero."
+	},
+	"history": {
+		"empty": "No previous calculations found."
+	},
+	"clearHistory": {
+		"confirmation": "History cleared successfully."
+	},
+	"promptNumbers": "Please enter numbers separated by spaces or commas:"
 }
