@@ -7,6 +7,11 @@ while (true)
 {
 	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide or type 'exit' to quit)");
 	string? operation = Console.ReadLine()?.ToLower();
+	if (string.IsNullOrWhiteSpace(operation))
+	{
+		Console.WriteLine("Invalid input. Please try again.");
+		continue;
+	}
 
 	if (operation == "exit")
 	{
@@ -15,6 +20,11 @@ while (true)
 	}
 	Console.WriteLine("Please enter numbers separated by spaces or commas:");
 	string? input = Console.ReadLine();
+	if (string.IsNullOrWhiteSpace(input))
+	{
+		Console.WriteLine("You didn't enter any numbers!");
+		continue;
+	}
 	List<double> numbers = InputHandler.ParseNumbers(input);
 
 	double result = 0;
