@@ -7,11 +7,27 @@ List<CalculationHistory> history = HistoryManager.LoadHistory();
 
 while (true)
 {
-	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide) \nOr type 'history' to view history,\n'clear' to delete history,\nor 'exit' to quit.");
+	Console.WriteLine("What operation would you like to perform? (type 'help' for options)");
 	string? operation = Console.ReadLine()?.ToLower();
 	if (string.IsNullOrWhiteSpace(operation))
 	{
 		Console.WriteLine("Invalid input. Please try again.");
+		continue;
+	}
+
+	if (operation == "help")
+	{
+		Console.WriteLine();
+		Console.WriteLine("=== HELP MENU ===");
+		Console.WriteLine("Available operations:");
+		Console.WriteLine(" add, subtract, multiply, divide");
+		Console.WriteLine();
+		Console.WriteLine("Special commands:");
+		Console.WriteLine(" history - View previous results");
+		Console.WriteLine(" clear - Delete history");
+		Console.WriteLine(" exit - Quit the program");
+		Console.WriteLine("=================");
+		Console.WriteLine();
 		continue;
 	}
 
