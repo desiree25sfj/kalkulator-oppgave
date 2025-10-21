@@ -7,7 +7,7 @@ List<CalculationHistory> history = HistoryManager.LoadHistory();
 
 while (true)
 {
-	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide) \nOr type 'history' to view history/'exit' to quit");
+	Console.WriteLine("What operation would you like to perform? \n(add, subtract, multiply, divide) \nOr type 'history' to view history,\n'clear' to delete history,\nor 'exit' to quit.");
 	string? operation = Console.ReadLine()?.ToLower();
 	if (string.IsNullOrWhiteSpace(operation))
 	{
@@ -29,6 +29,12 @@ while (true)
 				Console.WriteLine($"{record.Timestamp:g} | {record.Operation}({nums}) = {record.Result}");
 			}
 		}
+		continue;
+	}
+
+	if (operation == "clear")
+	{
+		HistoryManager.ClearHistory(history);
 		continue;
 	}
 

@@ -24,4 +24,16 @@ public static class HistoryManager
 		string json = JsonSerializer.Serialize(history, new JsonSerializerOptions { WriteIndented = true });
 		File.WriteAllText(filePath, json);
 	}
+
+	public static void ClearHistory(List<CalculationHistory> history)
+	{
+		history.Clear();
+
+		if (File.Exists(filePath))
+		{
+			File.Delete(filePath);
+		}
+
+		Console.WriteLine("History cleared successfully.");
+	}
 }
