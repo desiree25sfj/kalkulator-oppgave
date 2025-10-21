@@ -51,46 +51,4 @@ while (true)
 		Console.WriteLine(ex.Message);
 		continue;
 	}
-	
-
-	// switch (operation)
-	// {
-	// 	case "add":
-	// 		result = (numbers.Count == 2)
-	// 			? calc.Add(numbers[0], numbers[1])
-	// 			: calc.Add(numbers);
-	// 		break;
-
-	// 	case "subtract":
-	// 		result = (numbers.Count == 2)
-	// 			? calc.Subtract(numbers[0], numbers[1])
-	// 			: calc.Subtract(numbers);
-	// 		break;
-
-	// 	case "multiply":
-	// 		result = (numbers.Count == 2)
-	// 			? calc.Multiply(numbers[0], numbers[1])
-	// 			: calc.Multiply(numbers);
-	// 		break;
-
-	// 	case "divide":
-	// 		try
-	// 		{
-	// 			result = (numbers.Count == 2)
-	// 				? calc.Divide(numbers[0], numbers[1])
-	// 				: calc.Divide(numbers);
-	// 		}
-	// 		catch (DivideByZeroException ex)
-	// 		{
-	// 			Console.WriteLine(ex.Message);
-	// 			continue;
-	// 		}
-	// 		break;
-
-	// 	default:
-	// 		Console.WriteLine("Invalid operation. Please try again.");
-	// 		continue;
-	// }
-
-	// Console.WriteLine($"Result: {result}");
 }
