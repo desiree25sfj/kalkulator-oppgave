@@ -33,7 +33,5 @@ public static class HistoryManager
 		{
 			File.Delete(filePath);
 		}
-
-		Console.WriteLine("History cleared successfully.");
 	}
 }
