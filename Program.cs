@@ -50,7 +50,7 @@ while (true)
 		continue;
 	}
 
-	if (operation == "clear history")
+	if (operation == "clear")
 	{
 		HistoryManager.ClearHistory(history);
 		Console.WriteLine(MessageHandler.GetSubMessages("clearHistory")["confirmation"]);
